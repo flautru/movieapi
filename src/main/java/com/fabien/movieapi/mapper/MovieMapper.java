@@ -8,11 +8,11 @@ public class MovieMapper{
 
     public static Movie toEntity(MovieDTO dto) {
         Movie movie = new Movie();
-        movie.setTitle(dto.getTitle());
-        movie.setDirector(dto.getDirector());
-        movie.setReleaseYear(dto.getReleaseYear());
-        movie.setGenre(dto.getGenre());
-        movie.setRating(dto.getRating());
+        movie.setTitle(dto.title());
+        movie.setDirector(dto.director());
+        movie.setReleaseYear(dto.releaseYear());
+        movie.setGenre(dto.genre());
+        movie.setRating(dto.rating());
         return movie;
     }
 

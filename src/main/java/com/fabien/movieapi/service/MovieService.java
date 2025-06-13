@@ -41,11 +41,11 @@ public class MovieService {
         Movie existingMovie = movieRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
 
-        existingMovie.setDirector(updateMovie.getDirector());
-        existingMovie.setGenre(updateMovie.getGenre());
-        existingMovie.setTitle(updateMovie.getTitle());
-        existingMovie.setReleaseYear(updateMovie.getReleaseYear());
-        existingMovie.setRating(updateMovie.getRating());
+        existingMovie.setDirector(updateMovie.director());
+        existingMovie.setGenre(updateMovie.genre());
+        existingMovie.setTitle(updateMovie.title());
+        existingMovie.setReleaseYear(updateMovie.releaseYear());
+        existingMovie.setRating(updateMovie.rating());
 
         existingMovie = movieRepository.save(existingMovie);
         return MovieMapper.toDto(existingMovie);
